@@ -8,6 +8,7 @@ Environment configuration:
 - Traffic should be routed between two instances;
 - VMs should be deployed to the different Availability zones
 ![зображення](https://user-images.githubusercontent.com/110202752/186844719-8089de9a-168f-4d08-9fe2-575e502134c9.png)
+
 In the Second scenario candidate should develop PowerShell script that can deploy IIS website on VMs
 created in the previous scenario. Each script run should clean up Website, Application Pool, and site 
 folder. This PowerShell script should run on candidate’s local machine and connect to VMs via WinRM.
