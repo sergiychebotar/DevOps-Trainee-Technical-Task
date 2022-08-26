@@ -12,18 +12,20 @@ In the Second scenario candidate should develop PowerShell script that can deplo
 created in the previous scenario. Each script run should clean up Website, Application Pool, and site 
 folder. This PowerShell script should run on candidate’s local machine and connect to VMs via WinRM.
 DoD: As a report, terraform code and working website screenshots should be uploaded to the GitLab
+                      
+                      
                       STEPS TO REPRODUCE
-Steps to reproduce:
 
-Deploy infrastructure with Terraform
-Clone repository
-Add VM1_Public_IP to TrustedHosts with command
+
+1. Deploy infrastructure with Terraform
+2. Clone repository
+3. Add VM1_Public_IP to TrustedHosts with command
 Set-Item wsman:\localhost\client\TrustedHosts -Value VM1_Public_IP -Force
-Add VM2_Public_IP to TrustedHosts with command
+4. Add VM2_Public_IP to TrustedHosts with command
 Set-Item wsman:\localhost\client\TrustedHosts -Value VM2_Public_IP -Force
-Start installation of IIS on VM1 by invoking script Install-Webserver.ps1
+5. Start installation of IIS on VM1 by invoking script Install-Webserver.ps1
 Invoke-Command -ComputerName VM1_Public_IP -Credential VM1_Public_IP\demousr -FilePath PATH_To_Cloned_Repo:\Install-Webserver.ps1
-Start installation of IIS on VM2 by invoking script Install-Webserver.ps1
+6. Start installation of IIS on VM2 by invoking script Install-Webserver.ps1
 Invoke-Command -ComputerName VM2_Public_IP -Credential VM2_Public_IP\demousr -FilePath PATH_To_Cloned_Repo:\Install-Webserver.ps1
 
 END                      
