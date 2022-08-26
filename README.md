@@ -29,4 +29,9 @@ Invoke-Command -ComputerName VM1_Public_IP -Credential VM1_Public_IP\demousr -Fi
 6. Start installation of IIS on VM2 by invoking script Install-Webserver.ps1
 Invoke-Command -ComputerName VM2_Public_IP -Credential VM2_Public_IP\demousr -FilePath PATH_To_Cloned_Repo:\Install-Webserver.ps1
 
-END                      
+TDL
+Remove:
+1. duplicated resources instead of leveraging loops
+2. too many unnecessary "depends_on" blocks
+3. hardcoded passwords pushed to Version Control System
+4. WinRM port is exposed to the world which could be used by hackers
